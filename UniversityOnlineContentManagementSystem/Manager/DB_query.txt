@@ -1,0 +1,25 @@
+Selecting magazine title and total approved articles
+
+SELECT m.name, COUNT(a.article_id) as total_articles,m.academic_year FROM `magazines` m, articles a WHERE m.magazine_id=a.magazine_id and a.is_approved=1 GROUP BY m.magazine_id 
+
+
+//selecting department articles according to the magazine id
+
+Select count(a.article_id) as articles from articles a, students s,magazines m
+WHERE a.student_id=a.student_id 
+and m.magazine_id=a.magazine_id
+and s.faculty_id=1
+and a.magazine_id=1
+
+
+
+//Selecting the magazines query
+
+SELECT * From students s,articles a,magazines m
+where s.student_id=a.student_id
+and a.magazine_id=m.magazine_id
+and m.magazine_id=2
+
+
+//student query
+SELECT s.student_id,s.name,s.username,s.email,f.name as faculty,s.profile_img_url FROM `students` s,faculties f where s.faculty_id=f.faculty_id 
